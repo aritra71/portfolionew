@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Flip Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem; /* Tailwind's rounded-lg */
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="flip-card w-64 h-40">
+        <div class="flip-card-inner relative w-full h-full">
+            <div class="flip-card-front bg-blue-500 text-white p-6 rounded-lg shadow-lg">
+                <img src="images/aritra.png" alt="image"
+                class="h-[150px] w-[150px] rounded-full border-4 border-[#f4f9fc]" />
+            </div>
+            <div class="flip-card-back bg-red-500 text-white p-6 rounded-lg shadow-lg">
+                <div class="text-xl font-bold">Back Side</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
