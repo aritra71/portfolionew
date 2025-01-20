@@ -188,28 +188,28 @@ $(function () {
   $(".navigation-close").hover(cursorhover, cursor);
 });
 
-const tabs = document.querySelectorAll('.tab-btn');
-    const sections1 = document.querySelectorAll('.content-section');
+const tabs = document.querySelectorAll(".tab-btn");
+const sections1 = document.querySelectorAll(".content-section");
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Deactivate all tabs
-        tabs.forEach(t => {
-          t.classList.remove('bg-[#7f00e0]', 'text-white');
-          t.classList.add('bg-[#aadcec]');
-        });
-
-        // Hide all sections
-        sections1.forEach(section => section.classList.add('hidden'));
-
-        // Activate clicked tab and show the corresponding section
-        tab.classList.add('bg-[#7f00e0]', 'text-white');
-        tab.classList.remove('bg-[#aadcec]');
-        const target = document.getElementById(tab.dataset.target);
-        target.classList.remove('hidden');
-      });
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Deactivate all tabs
+    tabs.forEach((t) => {
+      t.classList.remove("bg-[#7f00e0]", "text-white");
+      t.classList.add("bg-[#aadcec]");
     });
 
-    function openPreview(url) {
-      window.open(url, '_blank');
-    }
+    // Hide all sections
+    sections1.forEach((section) => section.classList.add("hidden"));
+
+    // Activate clicked tab and show the corresponding section
+    tab.classList.add("bg-[#7f00e0]", "text-white");
+    tab.classList.remove("bg-[#aadcec]");
+    const target = document.getElementById(tab.dataset.target);
+    target.classList.remove("hidden");
+  });
+});
+
+function openPreview(url) {
+  window.open(url, "_blank");
+}
